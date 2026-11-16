@@ -72,6 +72,22 @@ code{background:#f1efe8;padding:1px 5px;border-radius:4px;font-size:12px}
 <div class="warn"><b>时效提醒：</b>《铸牢中华民族共同体意识数据库》为试用资源，<b>2026-12-31 到期</b>，与本方向高度对口，建议尽快使用；到期后需复查是否转订购。</div>
 
 <div class="panel">
+<h2>如何调用这套资源</h2>
+<div class="path">
+<div class="step"><span class="num">A</span><b>自己查：三个入口</b><p>① 本地打开 <code>科研资源库集合.html</code>（离线可用）；② 在线打开 <a href="https://yndx-339.github.io/ynu-research-resources/" target="_blank" rel="noopener">GitHub Pages 检索页</a>；③ 用 Excel 打开 <code>科研资源库集合.csv</code> 做透视与筛选。用法：搜索 → 主题／用途／分类筛选 → 点卡片「直达」进数据库。</p></div>
+<div class="step"><span class="num">B</span><b>访问前提</b><p>数据库本体不在本页内。点「直达」需<b>云大校园网出口 IP</b>；校外先走代理 <code>https://libresource.ynu.yitlink.com:8081/go?url=&lt;目标URL&gt;</code>；办事大厅与校内业务系统需 CAS 登录；部分库还需机构／个人账号登录态。本页只做导航，不代替数据库本身。</p></div>
+<div class="step"><span class="num">C</span><b>让智能体代查</b><p>直接说需求即可，无需提供账号密码。例：「用知网查某主题近五年 CSSCI，导出题录并下前 10 篇 PDF」「在读秀定位某书里某概念的段落」「走 CNKI AI 增强检索补交叉议题题录（只读，别提交问答）」「把清单按我的两个课题筛成专题清单，附检索式」。</p></div>
+</div>
+<ul class="rules" style="margin-top:14px">
+<li><b>论文与题录</b> → 知网（PDF 全文、GB/T 7714 题录导出）；<b>语义查全补漏</b> → CNKI AI 增强检索（提交知识问答／辅助创作须先征得同意）。</li>
+<li><b>专著段落定位</b> → 读秀（图像型阅读器，截图识别）；<b>整本电子书</b> → 汇雅书城逐章带读。</li>
+<li><b>外文全文</b> → ScienceDirect / IEEE Xplore / Wiley / Springer / Nature；<b>引证核验</b> → Web of Science、Scopus、CSSCI、JCR。</li>
+<li><b>专题库</b> →《铸牢中华民族共同体意识数据库》（2026-12-31 试用到期）、古代边疆研究信息服务平台、一带一路数据库。</li>
+<li><b>更新清单</b> → 依次跑 <code>node lib-nav-probe.mjs &gt; lib-db-result.json</code>、<code>node make-db-csv.mjs</code>、<code>node build-collection.mjs</code>；同步线上再跑 <code>python publish-github.py</code>。</li>
+</ul>
+</div>
+
+<div class="panel">
 <h2>推荐检索路径</h2>
 <div class="path">
 <div class="step"><span class="num">1</span><b>定题与查全：两路合用</b><p>知网 kns8s 主题检索（近五年 / CSSCI + 北大核心 / 学术期刊 / 相关性排序）<b>＋</b> CNKI AI 增强检索（语义）。实测两路题录零重合：主题检索兜住专名本体，语义检索打通交叉议题，缺一路即漏检。</p></div>
